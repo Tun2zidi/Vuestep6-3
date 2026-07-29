@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import UserLayoutView from '@/views/user/LayoutView.vue'
 import UserProfileView from '@/views/user/ProfileView.vue'
 import UserPostsView from '@/views/user/PostsView.vue'
+import NotFoundView from '@/views/NotFoundView.vue'   // ← เพิ่ม import
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,11 @@ const router = createRouter({
           component: UserPostsView
         }
       ]
+    },
+    {
+      path: '/:catchAll(.*)',        // ← เพิ่ม route นี้ไว้ล่างสุดเสมอ
+      name: 'not-found',
+      component: NotFoundView
     }
   ]
 })

@@ -25,7 +25,25 @@ onMounted(() => {
 <template>
   <div v-if="user">
     <h1>{{ user.name }}</h1>
-    <p>{{ user.email }}</p>
-    <p>{{ user.phone }}</p>
+    <nav>
+      <RouterLink :to="{ name: 'user-profile-view' }">Profile</RouterLink> |
+      <RouterLink :to="{ name: 'user-posts-view' }">Posts</RouterLink>
+    </nav>
+    <RouterView :user="user" />
   </div>
 </template>
+
+<style scoped>
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+  margin: 16px 0;
+}
+
+nav a {
+  font-weight: bold;
+}
+</style>

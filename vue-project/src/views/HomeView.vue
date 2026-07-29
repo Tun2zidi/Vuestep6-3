@@ -18,7 +18,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Users</h1>
+  <h1>User Directory</h1>
   <div class="users">
     <UserCard v-for="user in users" :key="user.id" :user="user" />
   </div>

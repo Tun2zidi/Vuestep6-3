@@ -7,22 +7,26 @@ defineProps<{
 </script>
 
 <template>
-  <RouterLink class="user-link" :to="{ name: 'user-detail-view', params: { id: user.id } }">
+  <RouterLink class="user-link" :to="{ name: 'user-layout-view', params: { id: user.id } }">
     <div class="user-card">
       <h2>{{ user.name }}</h2>
-      <p>{{ user.email }}</p>
-      <p>{{ user.company.name }}</p>
+      <span>{{ user.email }}</span>
+      <br />
+      <span>{{ user.company.name }}</span>
     </div>
   </RouterLink>
 </template>
 
 <style scoped>
 .user-card {
-  border: 1px solid #39395c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px;
   width: 250px;
-  margin-bottom: 18px;
   cursor: pointer;
+  border: 1px solid #39395c;
+  margin-bottom: 18px;
 }
 
 .user-card:hover {

@@ -32,7 +32,13 @@ const router = createRouter({
       ]
     },
     {
-      path: '/:catchAll(.*)',        // ← เพิ่ม route นี้ไว้ล่างสุดเสมอ
+           path: '/404/:resource',
+          name: '404-resource-view',
+           component: NotFoundView,
+           props: true
+    },
+    {
+      path: '/:catchAll(.*)',     
       name: 'not-found',
       component: NotFoundView
     }
